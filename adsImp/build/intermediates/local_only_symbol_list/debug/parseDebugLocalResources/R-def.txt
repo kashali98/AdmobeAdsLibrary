@@ -1,0 +1,24 @@
+R_DEF: Internal format may change without notice
+local
+color ads_badge_background
+color ads_badge_text
+color ads_body
+color ads_card_background
+color ads_cta_background
+color ads_cta_text
+color ads_divider
+color ads_headline
+color ads_shimmer_base
+color ads_shimmer_highlight
+dimen ads_card_corner
+dimen ads_card_padding
+dimen ads_cta_height
+dimen ads_icon_size
+dimen ads_media_height
+dimen ads_spacing
+dimen ads_spacing_small
+drawable bg_ad_badge
+drawable bg_ad_shimmer_block
+drawable bg_ad_shimmer_line
+id adsShimmerContainer
+layout view_ad_shimmer_medium

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nextGenRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F3F4"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next-Gen AdMob (:ads module)"
+            android:textColor="#202124"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Native Medium + Interstitial, driven by Firebase Remote Config."
+            android:textColor="#5F6368"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnShowInterstitial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Show Interstitial &amp; Continue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Native Medium Ad"
+            android:textColor="#202124"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <!-- Reusable Next-Gen native medium view. Self-loads via bind() in the Activity. -->
+        <com.lib.ads.presentation.view.NativeMediumAdView
+            android:id="@+id/nativeMediumAd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,17 @@
+R_DEF: Internal format may change without notice
+local
+drawable bg_native_card
+drawable bg_native_cta
+id adAdvertiser
+id adAttribution
+id adBody
+id adCta
+id adHeadline
+id adIcon
+id adMedia
+id adStars
+id adsShimmerContainer
+id nativeAdView
+layout view_native_medium_ad
+string ads_attribution
+string ads_icon_content_description

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  nextgen flavor: Next-Gen Ads module demo (:ads). Launcher = NextGenAdsActivity.
+  The AdMob app id is supplied at runtime via InitializationConfig (Remote Config),
+  so no APPLICATION_ID meta-data is needed here.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".activity.NextGenAdsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

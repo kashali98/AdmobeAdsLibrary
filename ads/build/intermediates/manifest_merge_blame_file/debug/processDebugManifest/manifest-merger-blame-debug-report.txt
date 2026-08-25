@@ -1,0 +1,20 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3  The Next-Gen SDK receives the AdMob application id at runtime via
+4  InitializationConfig (sourced from Firebase Remote Config), so no
+5  APPLICATION_ID meta-data is required here. Permissions are inherited
+6  from :adsImp.
+7-->
+8<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+9    package="com.lib.ads" >
+10
+11    <uses-sdk android:minSdkVersion="24" />
+12
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->/Volumes/OfficeWork/Android Native/AdmobeAdsLibrary/ads/src/main/AndroidManifest.xml:10:5-67
+13-->/Volumes/OfficeWork/Android Native/AdmobeAdsLibrary/ads/src/main/AndroidManifest.xml:10:22-64
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->/Volumes/OfficeWork/Android Native/AdmobeAdsLibrary/ads/src/main/AndroidManifest.xml:11:5-79
+14-->/Volumes/OfficeWork/Android Native/AdmobeAdsLibrary/ads/src/main/AndroidManifest.xml:11:22-76
+15
+16</manifest>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Layout for the reusable NativeMediumAdView. Root is <merge> so children attach
+  directly to the NativeMediumAdView (a FrameLayout). The shimmer overlays the
+  content while loading; visibility is toggled by BaseAdView. Styling reuses the
+  shared resources from :adsImp (@color/ads_*, @dimen/ads_*, @drawable/bg_ad_badge).
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <!-- Loading placeholder -->
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/adsShimmerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/ads_card_padding">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ads_media_height"
+                android:background="@drawable/bg_ad_shimmer_block" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ads_spacing"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/ads_icon_size"
+                    android:layout_height="@dimen/ads_icon_size"
+                    android:background="@drawable/bg_ad_shimmer_block" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/ads_spacing"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="14dp"
+                        android:background="@drawable/bg_ad_shimmer_line" />
+
+                    <View
+                        android:layout_width="180dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="@dimen/ads_spacing_small"
+                        android:background="@drawable/bg_ad_shimmer_line" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ads_cta_height"
+                android:layout_marginTop="@dimen/ads_spacing"
+                android:background="@drawable/bg_ad_shimmer_block" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <!-- Loaded native ad. All assets MUST live inside the NativeAdView. -->
+    <com.google.android.libraries.ads.mobile.sdk.nativead.NativeAdView
+        android:id="@+id/nativeAdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_native_card"
+            android:orientation="vertical"
+            android:padding="@dimen/ads_card_padding">
+
+            <TextView
+                android:id="@+id/adAttribution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_ad_badge"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:text="@string/ads_attribution"
+                android:textColor="@color/ads_badge_text"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <com.google.android.libraries.ads.mobile.sdk.nativead.MediaView
+                android:id="@+id/adMedia"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ads_media_height"
+                android:layout_marginTop="@dimen/ads_spacing_small" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ads_spacing"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/adIcon"
+                    android:layout_width="@dimen/ads_icon_size"
+                    android:layout_height="@dimen/ads_icon_size"
+                    android:contentDescription="@string/ads_icon_content_description"
+                    android:scaleType="fitCenter" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/ads_spacing"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/adHeadline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/ads_headline"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Ad headline" />
+
+                    <TextView
+                        android:id="@+id/adAdvertiser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/ads_body"
+                        android:textSize="12sp"
+                        tools:text="Advertiser" />
+
+                    <RatingBar
+                        android:id="@+id/adStars"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:stepSize="0.1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/adBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ads_spacing_small"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/ads_body"
+                android:textSize="13sp"
+                tools:text="Ad body text describing the advertised product or service." />
+
+            <Button
+                android:id="@+id/adCta"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ads_cta_height"
+                android:layout_marginTop="@dimen/ads_spacing"
+                android:background="@drawable/bg_native_cta"
+                android:textAllCaps="false"
+                android:textColor="@color/ads_cta_text"
+                tools:text="Install" />
+        </LinearLayout>
+    </com.google.android.libraries.ads.mobile.sdk.nativead.NativeAdView>
+</merge>

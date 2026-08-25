@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Reusable shimmer placeholder that mirrors the shape of a medium native ad.
+  Included by concrete ad views (e.g. :ads NativeMediumAdView) while an ad loads.
+-->
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/adsShimmerContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/ads_card_padding">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ads_media_height"
+            android:background="@drawable/bg_ad_shimmer_block" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ads_spacing"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/ads_icon_size"
+                android:layout_height="@dimen/ads_icon_size"
+                android:background="@drawable/bg_ad_shimmer_block" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ads_spacing"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp"
+                    android:background="@drawable/bg_ad_shimmer_line" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="@dimen/ads_spacing_small"
+                    android:background="@drawable/bg_ad_shimmer_line" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ads_cta_height"
+            android:layout_marginTop="@dimen/ads_spacing"
+            android:background="@drawable/bg_ad_shimmer_block" />
+    </LinearLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>

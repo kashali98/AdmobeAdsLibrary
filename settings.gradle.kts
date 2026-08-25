@@ -23,3 +23,6 @@ dependencyResolutionManagement {
 rootProject.name = "AdmobAdsLibrary"
 include(":app")
 include(":libraryads")
+// Next-Gen AdMob: reusable SDK-agnostic contracts (:adsImp) + Next-Gen implementation (:ads)
+include(":adsImp")
+include(":ads")

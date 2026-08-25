@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ads_card_corner">12dp</dimen>
+    <dimen name="ads_card_padding">12dp</dimen>
+    <dimen name="ads_icon_size">48dp</dimen>
+    <dimen name="ads_media_height">140dp</dimen>
+    <dimen name="ads_cta_height">44dp</dimen>
+    <dimen name="ads_spacing_small">6dp</dimen>
+    <dimen name="ads_spacing">10dp</dimen>
+</resources>
